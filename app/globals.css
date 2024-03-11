@@ -1,13 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* 
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-}
-
+} */
+/* 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -24,10 +24,48 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+.landing::after {
+  content: '';
+  width: calc((100vw/2) - 200px);
+  height: 100vh;
+  background: red
+    url('/landing_solar.jpg')
+    no-repeat calc(100vw/2) 0px fixed;
+  
+  background-size: cover;
+  top: 0px;
+  right: 0px;
+  position: absolute;
+  display: inline-block;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.solar {
+  background: url('/solar.avif');
+  background-size:  cover;
+  background-repeat: no-repeat;
+
+  
+}
+
+
+.geothermal {
+  background: url('/geothermal.avif');
+  background-size:  cover;
+  background-repeat: no-repeat;
+
+  
+}
+
+.wind {
+  background: url('/wind.webp');
+  background-size:  cover;
+  background-repeat: no-repeat;
+}
+
+@layer components {
+  .green-gradient {
+    @apply bg-gradient-to-r bg-clip-text from-green-700 to-lime-300 text-transparent;
   }
 }
